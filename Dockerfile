@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the server using Gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "server:app"]
+CMD ["python3.10", "server.py"]
