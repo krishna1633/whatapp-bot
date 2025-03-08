@@ -8,6 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Download spaCy language model
+RUN python3.10 -m spacy download en_core_web_sm
+
 # Copy app files
 COPY . .
 
