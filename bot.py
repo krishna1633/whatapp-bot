@@ -49,7 +49,7 @@ class ChatBot:
 chatbot = ChatBot("business_doc.docx")
 
 # Example Query
-query = "What are the class timings for Earthen Hues?"
-response = chatbot.get_answer(query)
-print("Query:", query)
-print("Response:", response)
+# query = "What are the class timings for Earthen Hues?"
+# response = chatbot.get_answer(query)
+# print("Query:", query)
+# print("Response:", response)

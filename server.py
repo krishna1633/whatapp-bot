@@ -1,13 +1,17 @@
 from fastapi import FastAPI, Request
 import requests
 from bot import chatbot
+from dotenv import load_dotenv
+import os
 
 app = FastAPI()
 
-# Meta API Credentials (Replace with actual values)
-ACCESS_TOKEN = "YOUR_WHATSAPP_ACCESS_TOKEN"
-VERIFY_TOKEN = "YOUR_VERIFY_TOKEN"
-WHATSAPP_API_URL = "https://graph.facebook.com/v18.0/YOUR_PHONE_NUMBER_ID/messages"
+# Load environment variables from .env file
+load_dotenv()
+
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
+WHATSAPP_API_URL = os.getenv("WHATSAPP_API_URL")
 
 @app.get("/")
 def home():
