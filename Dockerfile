@@ -4,18 +4,22 @@ FROM python:3.10
 # Set working directory
 WORKDIR /app
 
+# Create and activate a virtual environment
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
 # Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Download spaCy language model
-RUN python3.10 -m spacy download en_core_web_sm
+RUN python -m spacy download en_core_web_sm
 
-# Copy app files
+# Copy application files
 COPY . .
 
 # Expose port for API server
 EXPOSE 8080
 
-# Start the server
+# Start the server using Gunicorn
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "server:app"]
