@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+spacy
+sentence-transformers
+torch
+python-docx
+requests

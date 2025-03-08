@@ -1,0 +1,29 @@
+# WhatsApp Business Chatbot
+
+This is an AI-powered WhatsApp Business chatbot that responds to customer queries based on a provided `.docx` file. The bot uses **spaCy** and **Sentence Transformers** for natural language understanding and is integrated with the **Meta WhatsApp Cloud API**.
+
+---
+
+## **🚀 Features**
+✅ Reads and processes answers from a `.docx` file.  
+✅ Uses **NLP (spaCy + Sentence Transformers)** for intelligent responses.  
+✅ Connects to **WhatsApp Business API** using Meta's Cloud API.  
+✅ Fast and lightweight **FastAPI Server** for handling requests.  
+
+---
+
+## **🛠 Installation & Setup**
+
+### **1️⃣ Install Dependencies**
+Make sure you have Python **3.8+** installed.
+
+```bash
+brew install python@3.10
+python3.10 -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+python3.10 -m spacy download en_core_web_sm
+
+
+Start the server
+
